@@ -1,51 +1,73 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<title>无标题文档</title>
-<style type="text/css">
-	
-body {
-	background-color: #2B4641;
-	text-align: center;
-}
-.标题 {
-	font-size: 110px;
-	color: #FFF;
-	text-align: center;
-}
-.正文 {
-	font-size: 140px;
-	color: #FFF;
-}
-a:link {
-	color: #FFFFFF;
-	text-decoration: none;
-}
-a:visited {
-	text-decoration: none;
-	color: #FFFFFF;
-}
-a:hover {
-	text-decoration: none;
-	color: #FFFFFF;
-}
-a:active {
-	text-decoration: none;
-	color: #FFFFFF;
-}
-</style>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        main {
+            margin: 0 auto;
+            width: 500px;
+        }
+    </style>
 </head>
-
 <body>
-<p class="标题">&nbsp;</p>
-<p class="标题">Sunyl</p>
-<p class="标题">&nbsp;</p>
-<p>&nbsp;</p>
-<p class="正文"><a href="https://shilr889w6.jiandaoyun.com/f/5f26385ee4527f000628cab0">个人报销</a></p>
-<p class="正文"><a href="https://shilr889w6.jiandaoyun.com/f/5f2642cb806cba00067efe09">对公付款</a></p>
-<p class="正文"><a href="https://shilr889w6.jiandaoyun.com/f/5f264346552c5b0006b93bd2">公司费用</a></p>
-<p class="正文"><a href="https://shilr889w6.jiandaoyun.com/dash/5f2644ead4f84d000617b42b">报表查看</a></p>
+    <main>
+        
+
+
+
+        <p><label>&nbsp</label></p>
+        <p><label>&nbsp</label></p>
+        
+        <p>
+            <label style="font-size:35px;color:#3FAD9D;">固定成本：</label>
+            <input   id="a"style="width:235px;height:36px;font-size:30px">
+        </p>
+        
+        <p>
+            <label style="font-size:35px;color:#3FAD9D;">单位变动成本：</label>
+            <input   id="b"style="width:165px;height:36px;font-size:30px">
+        </p>
+        <p>
+            <label style="font-size:35px;color:#3FAD9D;">销售单价：</label>
+            <input   id="p"style="width:235px;height:36px;font-size:30px">
+        </p>
+        <p><label>&nbsp</label></p>
+        <p><label>&nbsp</label></p>
+
+
+        <button id="btn"style="width:419px;height:50px;font-size:35px;color:#ffffff;background-color:#3FAD9D;" >计算</button>
+        
+        <p><label>&nbsp</label></p>
+        <p><label>&nbsp</label></p>
+        
+        <p>
+            <label style="font-size:35px;"> 保本销售量：</label>
+            <input  disabled id="result"style="width:200px;height:36px;font-size:30px">
+        </p>
+
+
+
+    </main>
+    <script>
+        window.onload = function () {
+            const btn = document.querySelector("#btn")
+            btn.addEventListener("click",() => {
+                const a = document.querySelector("#a");
+                const b = document.querySelector("#b");
+                const p = document.querySelector("#p");
+                const aNum = a.value;
+                const bNum = b.value;
+                const pNum = p.value;
+                const result = ~~aNum/(~~pNum-~~bNum);
+                document.querySelector("#result").value = result;
+            },false);
+        }
+
+    </script>
 </body>
 </html>
-
